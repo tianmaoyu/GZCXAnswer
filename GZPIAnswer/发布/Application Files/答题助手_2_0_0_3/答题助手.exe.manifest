@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="答题助手.exe" version="2.0.0.3" publicKeyToken="056b6e07deba1c31" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="答题助手.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="答题助手" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="答题助手.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet version="1" class="System.Security.NamedPermissionSet" Name="LocalIntranet" Description="Default rights given to applications on the local intranet" Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- UAC 清单选项
+            如果要更改 Windows 用户帐户控制级别，请用以下节点之一替换 
+            requestedExecutionLevel 节点。
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            指定 requestedExecutionLevel 节点将会禁用文件和注册表虚拟化。
+            如果要利用文件和注册表虚拟化实现向后 
+            兼容性，则删除 requestedExecutionLevel 节点。
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Paway.Windows.Forms.dll" size="63488">
+      <assemblyIdentity name="Paway.Windows.Forms" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>F1avnhL98mVE4vruxJAoVLVys5dHfW7HehGPbU6Jiac=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Paway.Windows.Helper.dll" size="17408">
+      <assemblyIdentity name="Paway.Windows.Helper" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Ioi0c4H3/w/JW+oIdeCagrK/yDN0/E85ASNL2qW63vU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Paway.Windows.Resource.dll" size="251904">
+      <assemblyIdentity name="Paway.Windows.Resource" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>81LAxupOXbeeF6rQWeTmnelZ64GJmA1CY/jv0WpVozA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Paway.Windows.Win32.dll" size="152576">
+      <assemblyIdentity name="Paway.Windows.Win32" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>+zS5v8VAsn3FDkqer6JG3YevBMnVO4/C+1Zsxfs6v0M=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="答题助手.exe" size="621056">
+      <assemblyIdentity name="答题助手" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Eos5gBBIlK0GpL/DIyZG7mVY2YsJroO39ylKT7aY/jk=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="答题助手.exe.config" size="184">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>YyXx11OQ8Y9qQaMsAPfgWQIUIJMPT4Sw3i2UQTU2sRM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="答题助手.ico" size="67646">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>/+H0m6m4LGKntk8wkpt2lXsfiHFu1twUQTjdqgSNeec=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- 此应用程序设计使用的所有 Windows 版本的列表。
+      Windows 将会自动选择最兼容的环境。-->
+      <!-- 如果应用程序设计为使用 Windows Vista，请取消注释以下 supportedOS 节点-->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}"></supportedOS>-->
+      <!-- 如果应用程序设计使用 Windows 7，请取消注释以下 supportedOS 节点-->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}"/>-->
+      <!-- 如果应用程序设计为使用 Windows 8，请取消注释以下 supportedOS 节点-->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}"></supportedOS>-->
+      <!-- 如果应用程序设计为使用 Windows 8.1，请取消对以下 supportedOS 节点的注释-->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}"/>-->
+    </application>
+  </compatibility>
+<publisherIdentity name="L=TPW, T=m-alipay, O=Alipay.com Corporation, OU=CA Center, CN=705d7ee6d3d3f47f4427e22a53f7f277" issuerKeyHash="c8ba4f1a4b0dc51fc34a482758e92db8cba332f7" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>cJh7NJvVE0LhhnYb/qyGuFOLbXo=</DigestValue></Reference></SignedInfo><SignatureValue>WSi2GoESpDhMpq1oT7Fx6RJoTLa19J7NbmnkGtwrVbWmmKlWdYSmM6f+kiBanaNJFBFh7NYsIw0PhD5c/ThNtquKL6q1Kog1M7CWk2Q3rL+NGEWMURoYMzeRIxC3sFC/IO1RmLUO94uY9sqbbgESmllrbi04zXQVo7jJlIkwiZc=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>7PYUI5rjf3Y2pWv/MyUCsRWPqhcmy6qOikV8/F73qp4EVMM5OoG7qhcuzMNDrNFeKp/gfOmb+y8zOjuf3G6goGa4kUio5K0lV6R8decGMIUbKaMvAmRQcC7NuBLJZ1rV1jgUZcQroNEmLzyihAR2VbBMyHi4z1IYl5Xfx6hkScU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="7a6d8b53b886acfe1b7686e14213d59b347b9870" Description="" Url=""><as:assemblyIdentity name="答题助手.exe" version="2.0.0.3" publicKeyToken="056b6e07deba1c31" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>L=TPW, T=m-alipay, O=Alipay.com Corporation, OU=CA Center, CN=705d7ee6d3d3f47f4427e22a53f7f277</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>O1UvyNgx2HG1vw8jMoz1vLjZASc=</DigestValue></Reference></SignedInfo><SignatureValue>Jcxx9jAEFWaNKucH5i6UPMsFm75dusvHHugatOz11/AxxIUbvfAzXuzJ9fZJnaM5TajW6KzyRIfUyZ9KeOFkvmg1LaF8tNpZ0HmadfS0sN2N51wXb1PJ3LpF0dU3Nva66YFDKWY/3nnz4O97IpsHiVslzaxmdvgNHMLESJG8Dn8=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>7PYUI5rjf3Y2pWv/MyUCsRWPqhcmy6qOikV8/F73qp4EVMM5OoG7qhcuzMNDrNFeKp/gfOmb+y8zOjuf3G6goGa4kUio5K0lV6R8decGMIUbKaMvAmRQcC7NuBLJZ1rV1jgUZcQroNEmLzyihAR2VbBMyHi4z1IYl5Xfx6hkScU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIDlDCCAnygAwIBAgIRAOfIpAC7GvAx3CQcjHnugnIwDQYJKoZIhvcNAQEFBQAwaTEfMB0GA1UECgwWQWxpcGF5LmNvbSBDb3Jwb3JhdGlvbjEaMBgGA1UECwwRTWFjaGluZSBDQSBDZW50ZXIxKjAoBgNVBAMMIUFsaXBheS5jb20gQ29ycG9yYXRpb24gTWFjaGluZSBDQTAeFw0xNDAyMjYxMTU0MjlaFw0xNjAyMjYxMTU0MjlaMIGBMSkwJwYDVQQDDCA3MDVkN2VlNmQzZDNmNDdmNDQyN2UyMmE1M2Y3ZjI3NzESMBAGA1UECwwJQ0EgQ2VudGVyMR8wHQYDVQQKDBZBbGlwYXkuY29tIENvcnBvcmF0aW9uMREwDwYDVQQMDAhtLWFsaXBheTEMMAoGA1UEBwwDVFBXMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDs9hQjmuN/djala/8zJQKxFY+qFybLqo6KRXz8XveqngRUwzk6gbuqFy7Mw0Os0V4qn+B86Zv7LzM6O5/cbqCgZriRSKjkrSVXpHx15wYwhRspoy8CZFBwLs24EslnWtXWOBRlxCug0SYvPKKEBHZVsEzIeLjPUhiXld/HqGRJxQIDAQABo4GhMIGeMIGDBgNVHSMEfDB6gBTIuk8aSw3FH8NKSCdY6S24y6My96FdpFswWTEdMBsGA1UEAwwUQWxpcGF5IFRydXN0IE5ldFdvcmsxFzAVBgNVBAsMDlNlY3VyaXR5Q2VudGVyMR8wHQYDVQQKDBZBbGlwYXkuY29tIENvcnBvcmF0aW9uggMBaIEwCQYDVR0TBAIwADALBgNVHQ8EBAMCBJAwDQYJKoZIhvcNAQEFBQADggEBAEaVgud9P4OswLQ0ZFvPizw1gfSqEb+5lsNuYZNUi5qxp3FaJQP2+RReb3YRZTgx7ZYZFFt46MpX3843r7XX5t4TAMgu1iJEWhOXFulUms2XXxeXFBW1QIR3NDliKAXAxcjipXnwlkukEJWrrz+dycNZY74fXczOO4br+32/DuakV0NLGjCoYA4kvRbBYK+75zzmWlh4rcCd4d/tY04wU/F0gD8pdUdhQwgUs7/rQPudxJKmu5eNOzsoYzwj5wNKcioNWVCVPgbejQ61b5ZlT4uwqacd4kpTkZ7WwH4aCN0XObVFUncoez3o4NNdGexsF3mNxPHiuzuwQREf4UniGt8=</X509Certificate><X509Certificate>MIIDczCCAlugAwIBAgIDAWiBMA0GCSqGSIb3DQEBBQUAMFkxHTAbBgNVBAMMFEFsaXBheSBUcnVzdCBOZXRXb3JrMRcwFQYDVQQLDA5TZWN1cml0eUNlbnRlcjEfMB0GA1UECgwWQWxpcGF5LmNvbSBDb3Jwb3JhdGlvbjAeFw0xMjAxMDEwNzI3MDNaFw0yNjEyMzEwNzI3MDNaMGkxKjAoBgNVBAMMIUFsaXBheS5jb20gQ29ycG9yYXRpb24gTWFjaGluZSBDQTEaMBgGA1UECwwRTWFjaGluZSBDQSBDZW50ZXIxHzAdBgNVBAoMFkFsaXBheS5jb20gQ29ycG9yYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDknrZlZtQ8ufYV/Cfg00Hrq/+06eNqeZlsDnCTuPKpF/23v2mUnRzWo0O2UU95w4l51Rp+2XSVbAPaCeB8xu5FyqyiWSgFkGXwIieiSKPE9Qg8K3g/0nllxfBFE9DE+0LgYz/otyCIg8aO3ISDj8uRgBC8euTpGq/EGDxvpdpHrQuUJrpJLaiH9Pe369yu+TjbgwMhrFVvlkVe8IFr4l87ERRD47EvAhgOwgMvzIBHV15Yp3shIHtiQTUh39iTUrw943npgwCxxwATWa2mZ3EvbV7U8Kcy14dECIkwzJNAVLd6rZf+9jnEDbq4w9AkAzRF2zjC1IZQXwX6FG604J8hAgMBAAGjNDAyMAsGA1UdDwQEAwIBhjAVBgNVHSUEDjAMBgorBgEEAYI3CgwBMAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEFBQADggEBAHNyZvGz0lNvfZanuurQinB1hjPf97jp/Xfo2/xq2p77AqouYWY+/VD/Z3UPOzVytlMbH2HXS7LM88dmTt7gvH/VFnLCdnRw3f6zSWYMsWEmSkMZhDXsZ1k9M+BDcY7LReDwHcb3DqN+8E231bNcIQt21emInkMLR5BaF6L3fCJV2f0of+kOQZBftz6sPZTer9HgwloxQE0ghmOv02HbzFQzAcARj6hCkFH8Od6IKfF9R17voLvZE1lGbzTZyB7SlyleKKMON9fgjyAM98v1FS4RMxIyyGGEixJCIPON16SCzWB3P8t6UHVqYmum5SW2DjQNfcDxCvxyadVQi4xIVug=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
