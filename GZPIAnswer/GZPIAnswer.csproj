@@ -91,21 +91,17 @@
     <Reference Include="MySql.Data">
       <HintPath>G:\mysql\MySql.Data.dll</HintPath>
     </Reference>
-    <Reference Include="Paway.Windows.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Paway.Windows.Forms.dll</HintPath>
+    <Reference Include="Paway.Windows.Forms">
+      <HintPath>..\需要引用的文件\Paway.Windows.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="Paway.Windows.Helper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Paway.Windows.Helper.dll</HintPath>
+    <Reference Include="Paway.Windows.Helper">
+      <HintPath>..\需要引用的文件\Paway.Windows.Helper.dll</HintPath>
     </Reference>
-    <Reference Include="Paway.Windows.Resource, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Paway.Windows.Resource.dll</HintPath>
+    <Reference Include="Paway.Windows.Resource">
+      <HintPath>..\需要引用的文件\Paway.Windows.Resource.dll</HintPath>
     </Reference>
-    <Reference Include="Paway.Windows.Win32, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Paway.Windows.Win32.dll</HintPath>
+    <Reference Include="Paway.Windows.Win32">
+      <HintPath>..\需要引用的文件\Paway.Windows.Win32.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
