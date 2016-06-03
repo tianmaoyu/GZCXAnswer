@@ -67,7 +67,7 @@
             this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(4, 54);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1316, 682);
+            this.panel1.Size = new System.Drawing.Size(1332, 682);
             this.panel1.TabIndex = 0;
             // 
             // webBrowser1
@@ -79,7 +79,7 @@
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.ScriptErrorsSuppressed = true;
-            this.webBrowser1.Size = new System.Drawing.Size(1313, 627);
+            this.webBrowser1.Size = new System.Drawing.Size(1329, 627);
             this.webBrowser1.TabIndex = 1;
             this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             this.webBrowser1.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser1_Navigated);
@@ -95,7 +95,7 @@
             this.webPanel.Controls.Add(this.BFPanel);
             this.webPanel.Location = new System.Drawing.Point(17, 7);
             this.webPanel.Name = "webPanel";
-            this.webPanel.Size = new System.Drawing.Size(1287, 39);
+            this.webPanel.Size = new System.Drawing.Size(1303, 39);
             this.webPanel.TabIndex = 0;
             this.webPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.webPanel_Paint);
             // 
@@ -103,7 +103,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1245, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(1261, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(39, 31);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -118,7 +118,7 @@
             this.tb_url.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.tb_url.Location = new System.Drawing.Point(86, 5);
             this.tb_url.Name = "tb_url";
-            this.tb_url.Size = new System.Drawing.Size(1153, 31);
+            this.tb_url.Size = new System.Drawing.Size(1169, 31);
             this.tb_url.TabIndex = 1;
             // 
             // BFPanel
@@ -195,7 +195,7 @@
             this.buttonToAnswer.BackColor = System.Drawing.Color.Transparent;
             this.buttonToAnswer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonToAnswer.ForeColor = System.Drawing.Color.White;
-            this.buttonToAnswer.Location = new System.Drawing.Point(1230, 748);
+            this.buttonToAnswer.Location = new System.Drawing.Point(1246, 748);
             this.buttonToAnswer.Name = "buttonToAnswer";
             this.buttonToAnswer.Size = new System.Drawing.Size(75, 23);
             this.buttonToAnswer.TabIndex = 10;
@@ -209,7 +209,7 @@
             this.buttonLog.BackColor = System.Drawing.Color.Transparent;
             this.buttonLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLog.ForeColor = System.Drawing.Color.White;
-            this.buttonLog.Location = new System.Drawing.Point(1129, 748);
+            this.buttonLog.Location = new System.Drawing.Point(1145, 748);
             this.buttonLog.Name = "buttonLog";
             this.buttonLog.Size = new System.Drawing.Size(75, 23);
             this.buttonLog.TabIndex = 13;
@@ -223,7 +223,7 @@
             this.button5.BackColor = System.Drawing.Color.Transparent;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(1029, 748);
+            this.button5.Location = new System.Drawing.Point(1045, 748);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 14;
@@ -237,7 +237,7 @@
             this.buttonLogin.BackColor = System.Drawing.Color.Transparent;
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.ForeColor = System.Drawing.Color.White;
-            this.buttonLogin.Location = new System.Drawing.Point(928, 748);
+            this.buttonLogin.Location = new System.Drawing.Point(944, 748);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(75, 23);
             this.buttonLogin.TabIndex = 16;
@@ -252,7 +252,7 @@
             this.label_Name.BackColor = System.Drawing.Color.Transparent;
             this.label_Name.Font = new System.Drawing.Font("华文中宋", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_Name.ForeColor = System.Drawing.Color.White;
-            this.label_Name.Location = new System.Drawing.Point(782, 37);
+            this.label_Name.Location = new System.Drawing.Point(798, 37);
             this.label_Name.Name = "label_Name";
             this.label_Name.Size = new System.Drawing.Size(83, 16);
             this.label_Name.TabIndex = 17;
@@ -265,7 +265,7 @@
             this.label_Number.BackColor = System.Drawing.Color.Transparent;
             this.label_Number.Font = new System.Drawing.Font("华文中宋", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_Number.ForeColor = System.Drawing.Color.White;
-            this.label_Number.Location = new System.Drawing.Point(983, 37);
+            this.label_Number.Location = new System.Drawing.Point(999, 37);
             this.label_Number.Name = "label_Number";
             this.label_Number.Size = new System.Drawing.Size(83, 16);
             this.label_Number.TabIndex = 18;
@@ -290,7 +290,7 @@
             this.labelName.BackColor = System.Drawing.Color.Transparent;
             this.labelName.Font = new System.Drawing.Font("华文中宋", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelName.ForeColor = System.Drawing.Color.Black;
-            this.labelName.Location = new System.Drawing.Point(862, 37);
+            this.labelName.Location = new System.Drawing.Point(878, 37);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(68, 16);
             this.labelName.TabIndex = 20;
@@ -305,7 +305,7 @@
             this.labelNumber.BackColor = System.Drawing.Color.Transparent;
             this.labelNumber.Font = new System.Drawing.Font("华文中宋", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelNumber.ForeColor = System.Drawing.Color.DarkRed;
-            this.labelNumber.Location = new System.Drawing.Point(1053, 37);
+            this.labelNumber.Location = new System.Drawing.Point(1069, 37);
             this.labelNumber.Name = "labelNumber";
             this.labelNumber.Size = new System.Drawing.Size(0, 16);
             this.labelNumber.TabIndex = 21;
@@ -315,7 +315,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1326, 780);
+            this.ClientSize = new System.Drawing.Size(1342, 780);
             this.Controls.Add(this.labelNumber);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.label4);

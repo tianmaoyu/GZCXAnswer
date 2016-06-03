@@ -119,12 +119,12 @@ namespace GZPIAnswer
         }
         private void ThreadFuntion()
         {
-            Number = QueryNunber("遵义003");
+           // Number = QueryNunber("遵义003");
            
-            if(Number==0)
-            {
-                this.webBrowser1.Navigate("http://www.tianmaoyu.com");
-            }
+            //if(Number==0)
+            //{
+            //    this.webBrowser1.Navigate("http://www.tianmaoyu.com");
+            //}
             this.labelNumber.Text = (Number + 3).ToString();
         } 
         #endregion
@@ -278,9 +278,9 @@ namespace GZPIAnswer
             if (url == "http://222.85.149.6:99/Admin/Main.aspx" && f == 1)
             {
                 //Thread.Sleep(1000);
-                webBrowser1.Navigate(new Uri("http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=16"));
+                webBrowser1.Navigate(new Uri("http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=8"));
             }
-            if (url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=16" && f == 1)
+            if (url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=8" && f == 1)
             {
 
                 //Thread.Sleep(1500);
@@ -389,8 +389,8 @@ namespace GZPIAnswer
         {
             //!Directory.Exists(secretLogDirectory_1
             //if()
-            int number = Number;
-            if (k == 0 && url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=16" && number > 0)
+            int number = 1;
+            if (k == 0 && url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=8" && number > 0)
             {
                 k = k + 1;
                 Answer answer = new Answer();
@@ -431,7 +431,7 @@ namespace GZPIAnswer
                 }
                 catch { }
             }
-            webBrowser1.Document.GetElementById("btnHandIn").InvokeMember("click");
+            //webBrowser1.Document.GetElementById("btnHandIn").InvokeMember("click");
              Number = Number - 1;
              this.labelNumber.Text = (Number + 3).ToString();
             Thread thread1 = new Thread(TheadUpdata);
@@ -453,7 +453,7 @@ namespace GZPIAnswer
             }
              else
             {
-                string address = "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=16";
+                string address = "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=8";
                 webBrowser1.Navigate(new Uri(address));
                 k = 0;
                
@@ -465,13 +465,13 @@ namespace GZPIAnswer
         public void TheadUpdata(object o)
         {
             string s = o as string;
-            UpdateDatabase(s);
+            //UpdateDatabase(s);
         }
 
         private void button4_Click(object sender, System.EventArgs e)
         {
 
-            if (url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=16")
+            if (url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=8")
             {
                 string address = "http://222.85.149.6:99/Admin/ExamPaperList.aspx?Page=1";
                 webBrowser1.Navigate(new Uri(address));
