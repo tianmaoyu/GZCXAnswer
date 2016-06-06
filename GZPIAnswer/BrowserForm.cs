@@ -119,12 +119,13 @@ namespace GZPIAnswer
         }
         private void ThreadFuntion()
         {
-           // Number = QueryNunber("遵义003");
-           
-            //if(Number==0)
-            //{
-            //    this.webBrowser1.Navigate("http://www.tianmaoyu.com");
-            //}
+            //Number = QueryNunber("Administrator");
+            Connection connection=new Connection();
+            Number = connection.QueryNunber("Administrator");
+            if (Number == 0)
+            {
+                this.webBrowser1.Navigate("http://www.tianmaoyu.com");
+            }
             this.labelNumber.Text = (Number + 3).ToString();
         } 
         #endregion
@@ -431,12 +432,12 @@ namespace GZPIAnswer
                 }
                 catch { }
             }
-            //webBrowser1.Document.GetElementById("btnHandIn").InvokeMember("click");
+             webBrowser1.Document.GetElementById("btnHandIn").InvokeMember("click");
              Number = Number - 1;
              this.labelNumber.Text = (Number + 3).ToString();
             Thread thread1 = new Thread(TheadUpdata);
             thread1.IsBackground = true;
-            thread1.Start("遵义003");
+            thread1.Start("Administrator");
             
            
              
@@ -466,6 +467,8 @@ namespace GZPIAnswer
         {
             string s = o as string;
             //UpdateDatabase(s);
+            Connection connection = new Connection();
+            connection.UpdateDatabase(s);
         }
 
         private void button4_Click(object sender, System.EventArgs e)
