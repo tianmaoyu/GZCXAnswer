@@ -56,10 +56,10 @@
             this.tb_message_string.BackColor = System.Drawing.SystemColors.Menu;
             this.tb_message_string.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_message_string.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tb_message_string.Location = new System.Drawing.Point(75, 33);
+            this.tb_message_string.Location = new System.Drawing.Point(24, 33);
             this.tb_message_string.Multiline = true;
             this.tb_message_string.Name = "tb_message_string";
-            this.tb_message_string.Size = new System.Drawing.Size(205, 81);
+            this.tb_message_string.Size = new System.Drawing.Size(306, 126);
             this.tb_message_string.TabIndex = 2;
             this.tb_message_string.Text = "你了！";
             // 

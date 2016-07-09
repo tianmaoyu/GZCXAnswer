@@ -64,5 +64,33 @@ namespace GZPIAnswer
             }
             return number;
         }
+
+        public int Login(string userName,string password)
+        {
+            int number = 0;
+            try
+            {
+                conn = new MySqlConnection(ConString);
+                conn.Open();
+                var queryString = "SELECT Number FROM tb_user WHERE UserName='" + userName + "' AND Password = '" + password +
+                                  "'";
+                MySqlCommand command = new MySqlCommand("SELECT Number FROM tb_user WHERE UserName='" + userName + "' AND Password = '"+ password + "'", conn);
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (reader.HasRows)
+                    {
+                        number = reader.GetInt32(0);
+                    }
+                }
+                reader.Close();
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+            return number;
+        }
     }
 }

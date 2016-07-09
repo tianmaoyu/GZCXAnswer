@@ -47,8 +47,14 @@
             this.label_Name = new System.Windows.Forms.Label();
             this.label_Number = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.labelName = new System.Windows.Forms.Label();
             this.labelNumber = new System.Windows.Forms.Label();
+            this.labelName = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.webPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,7 +73,7 @@
             this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(4, 54);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1368, 682);
+            this.panel1.Size = new System.Drawing.Size(1360, 674);
             this.panel1.TabIndex = 0;
             // 
             // webBrowser1
@@ -79,7 +85,7 @@
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.ScriptErrorsSuppressed = true;
-            this.webBrowser1.Size = new System.Drawing.Size(1365, 627);
+            this.webBrowser1.Size = new System.Drawing.Size(1357, 619);
             this.webBrowser1.TabIndex = 1;
             this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             this.webBrowser1.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser1_Navigated);
@@ -95,7 +101,7 @@
             this.webPanel.Controls.Add(this.BFPanel);
             this.webPanel.Location = new System.Drawing.Point(17, 7);
             this.webPanel.Name = "webPanel";
-            this.webPanel.Size = new System.Drawing.Size(1339, 39);
+            this.webPanel.Size = new System.Drawing.Size(1331, 39);
             this.webPanel.TabIndex = 0;
             this.webPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.webPanel_Paint);
             // 
@@ -103,7 +109,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1297, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(1289, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(39, 31);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -118,7 +124,7 @@
             this.tb_url.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.tb_url.Location = new System.Drawing.Point(86, 5);
             this.tb_url.Name = "tb_url";
-            this.tb_url.Size = new System.Drawing.Size(1205, 31);
+            this.tb_url.Size = new System.Drawing.Size(1197, 31);
             this.tb_url.TabIndex = 1;
             // 
             // BFPanel
@@ -195,7 +201,7 @@
             this.buttonToAnswer.BackColor = System.Drawing.Color.Transparent;
             this.buttonToAnswer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonToAnswer.ForeColor = System.Drawing.Color.White;
-            this.buttonToAnswer.Location = new System.Drawing.Point(1282, 748);
+            this.buttonToAnswer.Location = new System.Drawing.Point(1274, 740);
             this.buttonToAnswer.Name = "buttonToAnswer";
             this.buttonToAnswer.Size = new System.Drawing.Size(75, 23);
             this.buttonToAnswer.TabIndex = 10;
@@ -209,7 +215,7 @@
             this.buttonLog.BackColor = System.Drawing.Color.Transparent;
             this.buttonLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLog.ForeColor = System.Drawing.Color.White;
-            this.buttonLog.Location = new System.Drawing.Point(1181, 748);
+            this.buttonLog.Location = new System.Drawing.Point(1173, 740);
             this.buttonLog.Name = "buttonLog";
             this.buttonLog.Size = new System.Drawing.Size(75, 23);
             this.buttonLog.TabIndex = 13;
@@ -223,7 +229,7 @@
             this.button5.BackColor = System.Drawing.Color.Transparent;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(1081, 748);
+            this.button5.Location = new System.Drawing.Point(1073, 740);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 14;
@@ -237,7 +243,7 @@
             this.buttonLogin.BackColor = System.Drawing.Color.Transparent;
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.ForeColor = System.Drawing.Color.White;
-            this.buttonLogin.Location = new System.Drawing.Point(980, 748);
+            this.buttonLogin.Location = new System.Drawing.Point(972, 740);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(75, 23);
             this.buttonLogin.TabIndex = 16;
@@ -252,7 +258,7 @@
             this.label_Name.BackColor = System.Drawing.Color.Transparent;
             this.label_Name.Font = new System.Drawing.Font("华文中宋", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_Name.ForeColor = System.Drawing.Color.White;
-            this.label_Name.Location = new System.Drawing.Point(834, 37);
+            this.label_Name.Location = new System.Drawing.Point(1022, 32);
             this.label_Name.Name = "label_Name";
             this.label_Name.Size = new System.Drawing.Size(83, 16);
             this.label_Name.TabIndex = 17;
@@ -265,7 +271,7 @@
             this.label_Number.BackColor = System.Drawing.Color.Transparent;
             this.label_Number.Font = new System.Drawing.Font("华文中宋", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_Number.ForeColor = System.Drawing.Color.White;
-            this.label_Number.Location = new System.Drawing.Point(1035, 37);
+            this.label_Number.Location = new System.Drawing.Point(1223, 32);
             this.label_Number.Name = "label_Number";
             this.label_Number.Size = new System.Drawing.Size(83, 16);
             this.label_Number.TabIndex = 18;
@@ -273,30 +279,16 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(391, 32);
+            this.label4.Location = new System.Drawing.Point(326, 35);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(167, 16);
             this.label4.TabIndex = 19;
             this.label4.Text = "联系：QQ-865704613";
-            // 
-            // labelName
-            // 
-            this.labelName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelName.AutoSize = true;
-            this.labelName.BackColor = System.Drawing.Color.Transparent;
-            this.labelName.Font = new System.Drawing.Font("华文中宋", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelName.ForeColor = System.Drawing.Color.Black;
-            this.labelName.Location = new System.Drawing.Point(914, 37);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(68, 16);
-            this.labelName.TabIndex = 20;
-            this.labelName.Text = "遵义003";
-            this.labelName.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.labelName.Click += new System.EventHandler(this.labelName_Click);
             // 
             // labelNumber
             // 
@@ -305,17 +297,109 @@
             this.labelNumber.BackColor = System.Drawing.Color.Transparent;
             this.labelNumber.Font = new System.Drawing.Font("华文中宋", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelNumber.ForeColor = System.Drawing.Color.DarkRed;
-            this.labelNumber.Location = new System.Drawing.Point(1105, 37);
+            this.labelNumber.Location = new System.Drawing.Point(1293, 32);
             this.labelNumber.Name = "labelNumber";
             this.labelNumber.Size = new System.Drawing.Size(0, 16);
             this.labelNumber.TabIndex = 21;
+            // 
+            // labelName
+            // 
+            this.labelName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelName.AutoSize = true;
+            this.labelName.BackColor = System.Drawing.Color.Transparent;
+            this.labelName.Font = new System.Drawing.Font("华文中宋", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelName.ForeColor = System.Drawing.Color.Black;
+            this.labelName.Location = new System.Drawing.Point(1102, 32);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(43, 16);
+            this.labelName.TabIndex = 20;
+            this.labelName.Text = "-----";
+            this.labelName.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.labelName.Click += new System.EventHandler(this.labelName_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(608, 29);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBox1.Size = new System.Drawing.Size(100, 21);
+            this.textBox1.TabIndex = 22;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox2.Location = new System.Drawing.Point(758, 29);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBox2.Size = new System.Drawing.Size(100, 21);
+            this.textBox2.TabIndex = 23;
+            this.textBox2.UseSystemPasswordChar = true;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("华文中宋", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(714, 32);
+            this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label1.Size = new System.Drawing.Size(38, 16);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "密码";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("华文中宋", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(499, 32);
+            this.label5.Name = "label5";
+            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label5.Size = new System.Drawing.Size(107, 16);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "订单号/用户名";
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Location = new System.Drawing.Point(873, 29);
+            this.button3.Name = "button3";
+            this.button3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 26;
+            this.button3.Text = "登陆";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(649, 1);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(191, 25);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "www.tianmaoyu.com";
             // 
             // BrowserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1378, 780);
+            this.ClientSize = new System.Drawing.Size(1370, 772);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.labelNumber);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.label4);
@@ -365,8 +449,14 @@
         private System.Windows.Forms.Label label_Name;
         private System.Windows.Forms.Label label_Number;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelNumber;
+        private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label6;
     }
 }
 

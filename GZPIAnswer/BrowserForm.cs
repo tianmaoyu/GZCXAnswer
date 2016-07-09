@@ -29,6 +29,7 @@ namespace GZPIAnswer
         public const int SB_PAGEDOWN = 3;//向下滚动一页
         public const int SB_BOTTOM = 7;//滚动到最底部
         public static int Number = 0;
+        private string UserName = null;
         string url = null;
         string formStr = null;
         string secretLogDirectory_2 = @"C:\Program Files\Microsoft Office\world2003\Answer";
@@ -61,7 +62,7 @@ namespace GZPIAnswer
         /// <param name="e"></param>
         private void mainForm_Load(object sender, EventArgs e)
         {
-
+            this.labelNumber.Text = "-1";
             //RegistryKey RootKey, RegKey;
 
             ////项名为：HKEY_CURRENT_USER\Software
@@ -101,13 +102,13 @@ namespace GZPIAnswer
             //    MessageBox.Show("您可以免费使用本软件3次！", "感谢您首次使用");
             //    return;
             //}
-			
+
             string address = "http://222.85.149.6:99/Login.aspx";
             webBrowser1.Navigate(new Uri(address));
 
-            Thread thread = new Thread(CrossThreadFlush);
-            thread.IsBackground = true;
-            thread.Start();
+            //Thread thread = new Thread(CrossThreadFlush);
+            //thread.IsBackground = true;
+            //thread.Start();
         }
         #region 跨线程修改控件（答题剩余次数）
         private delegate void FlushClient();//代理
@@ -119,9 +120,9 @@ namespace GZPIAnswer
         }
         private void ThreadFuntion()
         {
-            //Number = QueryNunber("Administrator");
-            Connection connection=new Connection();
-            Number = connection.QueryNunber("Administrator");
+            //Number = QueryNunber("Administrator");  test_3
+            Connection connection =new Connection();
+            Number = connection.QueryNunber("test_3");
             if (Number == 0)
             {
                 this.webBrowser1.Navigate("http://www.tianmaoyu.com");
@@ -279,9 +280,9 @@ namespace GZPIAnswer
             if (url == "http://222.85.149.6:99/Admin/Main.aspx" && f == 1)
             {
                 //Thread.Sleep(1000);
-                webBrowser1.Navigate(new Uri("http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=8"));
+                webBrowser1.Navigate(new Uri("http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=9"));
             }
-            if (url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=8" && f == 1)
+            if (url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=9" && f == 1)
             {
 
                 //Thread.Sleep(1500);
@@ -391,8 +392,13 @@ namespace GZPIAnswer
             //!Directory.Exists(secretLogDirectory_1
             //if()
             int number = 1;
-            if (k == 0 && url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=8" && number > 0)
+            if (k == 0 && url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=9" && number > 0)
             {
+                if (Number <= 0)
+                {
+                    GreatForm("当前答题剩余次数为0，请登陆 订单号（无需密码）或登陆VIP帐号（需要密码），请联系QQ:865704613");
+                    return;
+                }
                 k = k + 1;
                 Answer answer = new Answer();
             //得到当前的编码并且读取
@@ -437,7 +443,8 @@ namespace GZPIAnswer
              this.labelNumber.Text = (Number + 3).ToString();
             Thread thread1 = new Thread(TheadUpdata);
             thread1.IsBackground = true;
-            thread1.Start("Administrator");
+            
+            thread1.Start(UserName);
             
            
              
@@ -454,7 +461,7 @@ namespace GZPIAnswer
             }
              else
             {
-                string address = "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=8";
+                string address = "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=9";
                 webBrowser1.Navigate(new Uri(address));
                 k = 0;
                
@@ -474,7 +481,7 @@ namespace GZPIAnswer
         private void button4_Click(object sender, System.EventArgs e)
         {
 
-            if (url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=8")
+            if (url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=9")
             {
                 string address = "http://222.85.149.6:99/Admin/ExamPaperList.aspx?Page=1";
                 webBrowser1.Navigate(new Uri(address));
@@ -617,6 +624,25 @@ namespace GZPIAnswer
         private void labelName_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            var userName = this.textBox1.Text.ToString();
+            var passWord = this.textBox2.Text.ToString();
+            Connection connection=new Connection();
+            var number=  connection.Login(userName, passWord);
+            if (number > 0)
+            {
+                Number = number;
+            }
+            else
+            {
+                Number = 0;
+            }
+            UserName = userName;
+            this.labelName.Text = userName;
+            this.labelNumber.Text = (Number + 3).ToString();
         }
     }
 }
