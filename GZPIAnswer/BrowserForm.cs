@@ -396,7 +396,7 @@ namespace GZPIAnswer
             {
                 if (Number <= 0)
                 {
-                    GreatForm("当前答题剩余次数为0，请登陆 订单号（无需密码）或登陆VIP帐号（需要密码），请联系QQ:865704613");
+                    GreatForm("当前答题剩余次数为0，请登陆 订单号（密码：123456）或登陆VIP帐号，请联系QQ:865704613");
                     return;
                 }
                 k = k + 1;
