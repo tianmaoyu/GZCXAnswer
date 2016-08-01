@@ -396,22 +396,25 @@ namespace GZPIAnswer
             {
                 if (Number <= 0)
                 {
-                    GreatForm("当前答题剩余次数为0，请登陆 订单号（密码：123456）或登陆VIP帐号，请联系QQ:865704613");
+                    GreatForm("当前答题剩余次数小于或等于3，请登陆 订单号（密码：123456）或登陆VIP帐号，请联系QQ:865704613");
                     return;
                 }
                 k = k + 1;
-                Answer answer = new Answer();
-            //得到当前的编码并且读取
-            Encoding encoding = Encoding.GetEncoding(webBrowser1.Document.Encoding);
+                // Answer answer = new Answer();
+                //得到当前的编码并且读取
+                
+                Encoding encoding = Encoding.GetEncoding(webBrowser1.Document.Encoding);
             StreamReader stream = new StreamReader(webBrowser1.DocumentStream, encoding);
             string html = stream.ReadToEnd();
-            Answer2.GetWebTitles(html);
-           // webids = Answer.GetWebID(100, html);
-            //check_t.Start();
-            //check_t.Join();
-            Answer2.DoWrok();
+                Answer2 anser2 = new Answer2();
+                anser2.GetWebTitles(html);
+                // webids = Answer.GetWebID(100, html);
+                //check_t.Start();
+                //check_t.Join();
+                anser2.DoWrok();
+                stream.Close();
 
-            foreach (string id in Answer2.judgeID)
+            foreach (string id in anser2.judgeID)
             {
                 //Thread.Sleep(100);
                 try
@@ -420,7 +423,7 @@ namespace GZPIAnswer
                 }
                 catch { }
             }
-            foreach (string id in Answer2.singleID)
+            foreach (string id in anser2.singleID)
             {
                 //Thread.Sleep(100);
                 try
@@ -429,7 +432,7 @@ namespace GZPIAnswer
                 }
                 catch { }
             }
-            foreach (string id in Answer2.multipleID)
+            foreach (string id in anser2.multipleID)
             {
                 //Thread.Sleep(100);
                 try
@@ -438,8 +441,12 @@ namespace GZPIAnswer
                 }
                 catch { }
             }
-             webBrowser1.Document.GetElementById("btnHandIn").InvokeMember("click");
-             Number = Number - 1;
+               //判断一下是不是手动提交
+                if (!this.ckbUnsubmit.Checked)
+                {
+                    webBrowser1.Document.GetElementById("btnHandIn").InvokeMember("click");
+                }
+                Number = Number - 1;
              this.labelNumber.Text = (Number + 3).ToString();
             Thread thread1 = new Thread(TheadUpdata);
             thread1.IsBackground = true;
@@ -457,7 +464,7 @@ namespace GZPIAnswer
             else if (number <= 0)
             {
                 string name = this.labelName.Text;
-                GreatForm(name+"答题次数已经为0，请联系QQ:865704613");
+                GreatForm(name+"答题次数已经为小于或等于3，请联系QQ:865704613");
             }
              else
             {
@@ -643,6 +650,14 @@ namespace GZPIAnswer
             UserName = userName;
             this.labelName.Text = userName;
             this.labelNumber.Text = (Number + 3).ToString();
+        }
+
+        private void ckbUnsubmit_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.ckbUnsubmit.Checked)
+            {
+
+            }
         }
     }
 }

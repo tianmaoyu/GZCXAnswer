@@ -352,18 +352,18 @@ namespace GZPIAnswer
         };
 
         //得到相应的答案
-        public static string[] singleAnswers = GetAnswersForSigle(SingleAnserStrings);
-        public static String[] mulitpleAnsers = GetAnswers(mulitpleChoice);
-        public static Dictionary<int, List<string>> mulitpeAnsers2 = GetAnswersForMulitple(mulitpleAnserStrings);
-        public static string[] judgeAnswers = GetAnswers(judgeChoice);
+        public  string[] singleAnswers = GetAnswersForSigle(SingleAnserStrings);
+        public  String[] mulitpleAnsers = GetAnswers(mulitpleChoice);
+        public  Dictionary<int, List<string>> mulitpeAnsers2 = GetAnswersForMulitple(mulitpleAnserStrings);
+        public  string[] judgeAnswers = GetAnswers(judgeChoice);
         //HTML提取的题目
-        public static List<string> webSigleTitles = new List<string>();
-        public static List<string> webMulitpleTitles = new List<string>();
-        public static List<string> webJudgeTitles = new List<string>();
+        public  List<string> webSigleTitles = new List<string>();
+        public  List<string> webMulitpleTitles = new List<string>();
+        public  List<string> webJudgeTitles = new List<string>();
         //答案ID
 
 
-        static string htmlDOC;
+         string htmlDOC;
 
 
         #region 提取网页中的题目
@@ -372,7 +372,7 @@ namespace GZPIAnswer
         /// 对HTML中的题目进行提取
         /// </summary>
         /// <param name="html">试卷的HTML</param>
-        public static void GetWebTitles(string html)
+        public  void GetWebTitles(string html)
         {
             htmlDOC = html;
             string pattern = @"问题\d+[^<]+";
@@ -717,11 +717,11 @@ namespace GZPIAnswer
 
         #endregion
 
-        public static List<string> singleID = new List<string>();
-        public static List<string> multipleID = new List<string>();
-        public static List<string> judgeID = new List<string>();
+        public  List<string> singleID = new List<string>();
+        public  List<string> multipleID = new List<string>();
+        public  List<string> judgeID = new List<string>();
 
-        public static void DoWrok()
+        public  void DoWrok()
         {
 #if DEBUG
             FileStream aFileStream = new FileStream("H:\\工具\\答题助手数据\\2016分析\\log.txt", FileMode.OpenOrCreate);
@@ -841,7 +841,7 @@ namespace GZPIAnswer
         /// <param name="webTitleIndex"></param>
         /// <param name="standardAnwserIndex"></param>
         /// <returns></returns>
-        public static string GetSingleID(string html, int webTitleIndex, int standardAnwserIndex)
+        public  string GetSingleID(string html, int webTitleIndex, int standardAnwserIndex)
         {
             string result = null;
             string expriessionString;
@@ -889,7 +889,7 @@ namespace GZPIAnswer
         }
 
 
-        public static string GetMulitpleIDForAnser(string html, string strAanwser, int webTitleIndex)
+        public  string GetMulitpleIDForAnser(string html, string strAanwser, int webTitleIndex)
         {
             string result = null;
             string expriessionString;
