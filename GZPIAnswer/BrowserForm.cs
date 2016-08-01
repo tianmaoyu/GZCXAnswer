@@ -646,6 +646,8 @@ namespace GZPIAnswer
             else
             {
                 Number = 0;
+                GreatForm("密码或者用户名错误，或者次数已经用完。");
+                return;
             }
             UserName = userName;
             this.labelName.Text = userName;
