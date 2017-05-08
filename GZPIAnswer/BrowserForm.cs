@@ -17,6 +17,7 @@ using System.Runtime.InteropServices;
 using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
 
+
 namespace GZPIAnswer
 {
     public partial class BrowserForm : _360Form
@@ -280,9 +281,9 @@ namespace GZPIAnswer
             if (url == "http://222.85.149.6:99/Admin/Main.aspx" && f == 1)
             {
                 //Thread.Sleep(1000);
-                webBrowser1.Navigate(new Uri("http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=9"));
+                webBrowser1.Navigate(new Uri("http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=11"));
             }
-            if (url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=9" && f == 1)
+            if (url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=11" && f == 1)
             {
 
                 //Thread.Sleep(1500);
@@ -392,7 +393,7 @@ namespace GZPIAnswer
             //!Directory.Exists(secretLogDirectory_1
             //if()
             int number = 1;
-            if (k == 0 && url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=9" && number > 0)
+            if (k == 0 && url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=11" && number > 0)
             {
                 if (Number <= 0)
                 {
@@ -468,7 +469,7 @@ namespace GZPIAnswer
             }
              else
             {
-                string address = "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=9";
+                string address = "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=11";
                 webBrowser1.Navigate(new Uri(address));
                 k = 0;
                
@@ -488,7 +489,7 @@ namespace GZPIAnswer
         private void button4_Click(object sender, System.EventArgs e)
         {
 
-            if (url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=9")
+            if (url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=11")
             {
                 string address = "http://222.85.149.6:99/Admin/ExamPaperList.aspx?Page=1";
                 webBrowser1.Navigate(new Uri(address));
@@ -635,6 +636,7 @@ namespace GZPIAnswer
 
         private void button3_Click_1(object sender, EventArgs e)
         {
+            
             var userName = this.textBox1.Text.ToString();
             var passWord = this.textBox2.Text.ToString();
             Connection connection=new Connection();

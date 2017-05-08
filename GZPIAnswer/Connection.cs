@@ -12,7 +12,7 @@ namespace GZPIAnswer
     public class Connection
     {
         private DataSet dsall;
-        private static String ConString = "database=user;Password=qwe123456qwe;UserName=root;server=120.24.170.247;Port=3306;charset=utf8";
+        private static String ConString = "database=answer;Password=root;UserName=root;server=127.0.0.1;Port=3307;charset=utf8";
         private MySqlConnection conn;
         private MySqlDataAdapter mdap;
         

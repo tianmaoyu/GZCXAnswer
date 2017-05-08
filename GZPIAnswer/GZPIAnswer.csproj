@@ -29,7 +29,7 @@
     <PublisherName>答题助手</PublisherName>
     <SuiteName>答题助手</SuiteName>
     <WebPage>publish.thml</WebPage>
-    <ApplicationRevision>30</ApplicationRevision>
+    <ApplicationRevision>31</ApplicationRevision>
     <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
