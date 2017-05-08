@@ -390,6 +390,8 @@ namespace GZPIAnswer
         int k=0;
         private void button3_Click(object sender, EventArgs e)
         {
+            buttonToAnswer.Enabled = false;
+            this.Cursor = Cursors.WaitCursor;
             //!Directory.Exists(secretLogDirectory_1
             //if()
             int number = 1;
@@ -476,7 +478,8 @@ namespace GZPIAnswer
                 //GreatForm("如果多次登录都是一张试卷或者不同账号登录时一个账号是请清除你浏览器的缓存，或者是网站本身问题！3秒后自动退出");
                
             }
-            
+            this.Cursor = Cursors.Default;
+            buttonToAnswer.Enabled = true;
         }
         public void TheadUpdata(object o)
         {
@@ -636,24 +639,38 @@ namespace GZPIAnswer
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            
-            var userName = this.textBox1.Text.ToString();
-            var passWord = this.textBox2.Text.ToString();
-            Connection connection=new Connection();
-            var number=  connection.Login(userName, passWord);
-            if (number > 0)
+            button3.Enabled = false;
+            this.Cursor = Cursors.WaitCursor;
+            try
             {
-                Number = number;
+                var userName = this.textBox1.Text.ToString();
+                var passWord = this.textBox2.Text.ToString();
+                Connection connection = new Connection();
+                var number = connection.Login(userName, passWord);
+                if (number > 0)
+                {
+                    Number = number;
+                }
+                else
+                {
+                    Number = 0;
+                    GreatForm("密码或者用户名错误，或者次数已经用完。");
+                    return;
+                }
+                UserName = userName;
+                this.labelName.Text = userName;
+                this.labelNumber.Text = (Number + 3).ToString();
             }
-            else
+            catch (Exception ex)
             {
-                Number = 0;
-                GreatForm("密码或者用户名错误，或者次数已经用完。");
-                return;
+
             }
-            UserName = userName;
-            this.labelName.Text = userName;
-            this.labelNumber.Text = (Number + 3).ToString();
+            finally
+            {
+                button3.Enabled = true;
+                this.Cursor = Cursors.Default;
+            }
+         
         }
 
         private void ckbUnsubmit_CheckedChanged(object sender, EventArgs e)
