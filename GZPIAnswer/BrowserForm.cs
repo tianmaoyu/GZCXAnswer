@@ -392,94 +392,106 @@ namespace GZPIAnswer
         {
             buttonToAnswer.Enabled = false;
             this.Cursor = Cursors.WaitCursor;
-            //!Directory.Exists(secretLogDirectory_1
-            //if()
-            int number = 1;
-            if (k == 0 && url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=11" && number > 0)
+            try
             {
-                if (Number <= 0)
+                //!Directory.Exists(secretLogDirectory_1
+                //if()
+                int number = 1;
+                if (k == 0 && url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=11" && number > 0)
                 {
-                    GreatForm("当前答题剩余次数小于或等于3，请登陆 订单号（密码：123456）或登陆VIP帐号，请联系QQ:865704613");
-                    return;
-                }
-                k = k + 1;
-                // Answer answer = new Answer();
-                //得到当前的编码并且读取
-                
-                Encoding encoding = Encoding.GetEncoding(webBrowser1.Document.Encoding);
-            StreamReader stream = new StreamReader(webBrowser1.DocumentStream, encoding);
-            string html = stream.ReadToEnd();
-                Answer2 anser2 = new Answer2();
-                anser2.GetWebTitles(html);
-                // webids = Answer.GetWebID(100, html);
-                //check_t.Start();
-                //check_t.Join();
-                anser2.DoWrok();
-                stream.Close();
+                    if (Number <= 0)
+                    {
+                        GreatForm("当前答题剩余次数小于或等于3，请登陆 订单号（密码：123456）或登陆VIP帐号，请联系QQ:865704613");
+                        return;
+                    }
+                    k = k + 1;
+                    // Answer answer = new Answer();
+                    //得到当前的编码并且读取
 
-            foreach (string id in anser2.judgeID)
-            {
-                //Thread.Sleep(100);
-                try
-                {
-                    webBrowser1.Document.GetElementById(id).SetAttribute("Checked", "true");
+                    Encoding encoding = Encoding.GetEncoding(webBrowser1.Document.Encoding);
+                    StreamReader stream = new StreamReader(webBrowser1.DocumentStream, encoding);
+                    string html = stream.ReadToEnd();
+                    Answer2 anser2 = new Answer2();
+                    anser2.GetWebTitles(html);
+                    // webids = Answer.GetWebID(100, html);
+                    //check_t.Start();
+                    //check_t.Join();
+                    anser2.DoWrok();
+                    stream.Close();
+
+                    foreach (string id in anser2.judgeID)
+                    {
+                        //Thread.Sleep(100);
+                        try
+                        {
+                            webBrowser1.Document.GetElementById(id).SetAttribute("Checked", "true");
+                        }
+                        catch { }
+                    }
+                    foreach (string id in anser2.singleID)
+                    {
+                        //Thread.Sleep(100);
+                        try
+                        {
+                            webBrowser1.Document.GetElementById(id).SetAttribute("Checked", "true");
+                        }
+                        catch { }
+                    }
+                    foreach (string id in anser2.multipleID)
+                    {
+                        //Thread.Sleep(100);
+                        try
+                        {
+                            webBrowser1.Document.GetElementById(id).SetAttribute("Checked", "true");
+                        }
+                        catch { }
+                    }
+                    //判断一下是不是手动提交
+                    if (!this.ckbUnsubmit.Checked)
+                    {
+                        webBrowser1.Document.GetElementById("btnHandIn").InvokeMember("click");
+                    }
+                    Number = Number - 1;
+                    this.labelNumber.Text = (Number + 3).ToString();
+                    Thread thread1 = new Thread(TheadUpdata);
+                    thread1.IsBackground = true;
+
+                    thread1.Start(UserName);
+
+
+
+                    //UpdateDatabase("Administrator");
                 }
-                catch { }
-            }
-            foreach (string id in anser2.singleID)
-            {
-                //Thread.Sleep(100);
-                try
+                else if (url == "http://222.85.149.6:99/Login.aspx")
                 {
-                    webBrowser1.Document.GetElementById(id).SetAttribute("Checked", "true");
+                    GreatForm("请先登录你的账号");
                 }
-                catch { }
-            }
-            foreach (string id in anser2.multipleID)
-            {
-                //Thread.Sleep(100);
-                try
+                else if (number <= 0)
                 {
-                    webBrowser1.Document.GetElementById(id).SetAttribute("Checked", "true");
+                    string name = this.labelName.Text;
+                    GreatForm(name + "答题次数已经为小于或等于3，请联系QQ:865704613");
                 }
-                catch { }
-            }
-               //判断一下是不是手动提交
-                if (!this.ckbUnsubmit.Checked)
+                else
                 {
-                    webBrowser1.Document.GetElementById("btnHandIn").InvokeMember("click");
+                    string address = "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=11";
+                    webBrowser1.Navigate(new Uri(address));
+                    k = 0;
+
+                    //GreatForm("如果多次登录都是一张试卷或者不同账号登录时一个账号是请清除你浏览器的缓存，或者是网站本身问题！3秒后自动退出");
+
                 }
-                Number = Number - 1;
-             this.labelNumber.Text = (Number + 3).ToString();
-            Thread thread1 = new Thread(TheadUpdata);
-            thread1.IsBackground = true;
-            
-            thread1.Start(UserName);
-            
-           
-             
-            //UpdateDatabase("Administrator");
             }
-           else if (url == "http://222.85.149.6:99/Login.aspx")
+            catch (Exception ex)
             {
-                GreatForm("请先登录你的账号");
+
             }
-            else if (number <= 0)
+            finally
             {
-                string name = this.labelName.Text;
-                GreatForm(name+"答题次数已经为小于或等于3，请联系QQ:865704613");
+                this.Cursor = Cursors.Default;
+                buttonToAnswer.Enabled = true;
             }
-             else
-            {
-                string address = "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=11";
-                webBrowser1.Navigate(new Uri(address));
-                k = 0;
-               
-                //GreatForm("如果多次登录都是一张试卷或者不同账号登录时一个账号是请清除你浏览器的缓存，或者是网站本身问题！3秒后自动退出");
-               
-            }
-            this.Cursor = Cursors.Default;
-            buttonToAnswer.Enabled = true;
+          
+         
         }
         public void TheadUpdata(object o)
         {
