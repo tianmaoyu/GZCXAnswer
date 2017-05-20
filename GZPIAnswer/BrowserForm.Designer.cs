@@ -270,11 +270,11 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(342, 35);
+            this.label4.Location = new System.Drawing.Point(371, 33);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(167, 16);
+            this.label4.Size = new System.Drawing.Size(150, 16);
             this.label4.TabIndex = 19;
-            this.label4.Text = "联系：QQ-865704613";
+            this.label4.Text = "作者QQ:865704613";
             // 
             // labelNumber
             // 
@@ -343,12 +343,12 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("华文中宋", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(515, 32);
+            this.label5.Location = new System.Drawing.Point(554, 32);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label5.Size = new System.Drawing.Size(107, 16);
+            this.label5.Size = new System.Drawing.Size(53, 16);
             this.label5.TabIndex = 25;
-            this.label5.Text = "订单号/用户名";
+            this.label5.Text = "用户名";
             // 
             // button3
             // 
@@ -382,11 +382,11 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(657, 10);
+            this.label6.Location = new System.Drawing.Point(353, 10);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(161, 16);
+            this.label6.Size = new System.Drawing.Size(167, 16);
             this.label6.TabIndex = 29;
-            this.label6.Text = "www.tianmaoyu.com";
+            this.label6.Text = "答题QQ群:303822780";
             // 
             // BrowserForm
             // 

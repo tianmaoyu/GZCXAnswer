@@ -1,21 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using Microsoft.Win32;
 using System.Data;
 using System.Drawing;
-using System;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Paway.Windows.Forms;
 using System.IO;
-using System.Threading;
-using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
 using MySql.Data.MySqlClient;
-using System.Data.SqlClient;
 
 
 namespace GZPIAnswer
@@ -23,8 +16,9 @@ namespace GZPIAnswer
     public partial class BrowserForm : _360Form
     {
         [DllImport("User32.dll")]
-
         private static extern Int32 SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        private  bool isfreeUser = false;//是不可以免费一次
         public const int WM_VSCROLL = 0x0115;//垂直滚动条消息
         public const int SB_LINEDOWN = 1;//向下滚动一行
         public const int SB_PAGEDOWN = 3;//向下滚动一页
@@ -39,23 +33,23 @@ namespace GZPIAnswer
         string message_2 = "请下载一个软件才能继续哦：是否下载[百度杀毒]";
         string message_3 = "请下载一个软件才能继续哦：是否下载[百度浏览器]";
         string message_start = "请登录你的账号";
-        int f=0;
+        int f = 0;
         string[] webids = null;
         string html = null;
-        int fm=0;
+        int fm = 0;
         public BrowserForm()
         {
             InitializeComponent();
             this.CenterToScreen();
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            System.Timers.Timer t1 = new System.Timers.Timer(2500);   //实例化Timer类，设置间隔时间为10000毫秒；   
-            t1.Elapsed += new System.Timers.ElapsedEventHandler(Sumbit1); //到达时间的时候执行事件；   
+            System.Timers.Timer t1 = new System.Timers.Timer(50);   //实例化Timer类，设置间隔时间为10000毫秒；   
+            t1.Elapsed += new System.Timers.ElapsedEventHandler(CheckFirstTimeUse); //到达时间的时候执行事件；   
             t1.AutoReset = false;   //设置是执行一次（false）还是一直执行(true)；   
             t1.Enabled = true;
-            
+
         }
-        
-       
+
+
         /// <summary>
         /// 载入窗体时发生
         /// </summary>
@@ -122,14 +116,14 @@ namespace GZPIAnswer
         private void ThreadFuntion()
         {
             //Number = QueryNunber("Administrator");  test_3
-            Connection connection =new Connection();
+            Connection connection = new Connection();
             Number = connection.QueryNunber("test_3");
             if (Number == 0)
             {
                 this.webBrowser1.Navigate("http://www.tianmaoyu.com");
             }
             this.labelNumber.Text = (Number + 3).ToString();
-        } 
+        }
         #endregion
         public void Dowork()
         {
@@ -139,10 +133,10 @@ namespace GZPIAnswer
             //得到当前的编码并且读取
             //Encoding encoding = Encoding.GetEncoding(webBrowser1.Document.Encoding);
             //StreamReader stream = new StreamReader(webBrowser1.DocumentStream, encoding);
-          
-           
-           
-           
+
+
+
+
             webids = Answer.GetWebID(100, html);
             foreach (string id in webids)
             {
@@ -153,17 +147,17 @@ namespace GZPIAnswer
                 }
                 catch { }
             }
-           // webBrowser1.Document.GetElementById("btnHandIn").InvokeMember("click"); 
+            // webBrowser1.Document.GetElementById("btnHandIn").InvokeMember("click"); 
         }
-      public void share()
+        public void share()
         {
             ShareForm sf = new ShareForm();
             sf.ShowDialog();
         }
-         public void Sumbit3(object source, System.Timers.ElapsedEventArgs e)
-      {
-          Application.Exit();
-      }
+        public void Sumbit3(object source, System.Timers.ElapsedEventArgs e)
+        {
+            Application.Exit();
+        }
         public void Sumbit2(object source, System.Timers.ElapsedEventArgs e)
         {
             Thread th = new Thread(share);
@@ -184,13 +178,28 @@ namespace GZPIAnswer
 
         }
 
-        public void Sumbit1(object source, System.Timers.ElapsedEventArgs e)
+        public void CheckFirstTimeUse(object source, System.Timers.ElapsedEventArgs e)
         {
+            Thread checkThread = new Thread(delegate ()
+            {
+                var userFreeHelper = new UserFreeHelper();
+                var isFirstTimeUse = userFreeHelper.IsFreeUser();
+                if (isFirstTimeUse)
+                {
+                    isfreeUser = true;
+                    GreatForm("免费提供一次答题！",true);
+                }
+                else
+                {
+                    //GreatForm("此电脑已经免费答题一次过，答题联系QQ群：303822780 ！！");
+                }
+            });
+            checkThread.Start();
             if (url == "http://222.85.149.6:99/Login.aspx")
             {
-               // GreatForm(message_start);
+                // GreatForm(message_start);
             }
-           
+
         }
         private void webPanel_Paint(object sender, PaintEventArgs e)
         {
@@ -263,7 +272,7 @@ namespace GZPIAnswer
 
         private void webBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
-            f=f+1;
+            f = f + 1;
             try
             {
                 url = webBrowser1.Url.ToString();
@@ -273,9 +282,9 @@ namespace GZPIAnswer
             {
 
             }
-            if (url == "http://222.85.149.6:99/Login.aspx"&&f==1)
+            if (url == "http://222.85.149.6:99/Login.aspx" && f == 1)
             {
-                
+
             }
 
             if (url == "http://222.85.149.6:99/Admin/Main.aspx" && f == 1)
@@ -298,14 +307,14 @@ namespace GZPIAnswer
             }
 
         }
-       
+
         public void Sumbit(object source, System.Timers.ElapsedEventArgs e)
         {
             //if (Directory.Exists(secretLogDirectory_1))
             //{
             //    GreatForm(message_2);
             //}
-            if(fm==0)
+            if (fm == 0)
             {
                 fm = fm + 1;
                 GreatForm(message_1);
@@ -314,18 +323,18 @@ namespace GZPIAnswer
             //{
             //    GreatForm("一切无法解决的问题。请联系作者：QQ865704613");
             //}
-                //Directory.CreateDirectory(secretLogDirectory_1);
+            //Directory.CreateDirectory(secretLogDirectory_1);
             //webBrowser1.Document.GetElementById("btnHandIn").InvokeMember("click");
             //DialogResult dr = MessageBox.Show("你确定吗？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             //if (dr == DialogResult.OK)
             //{
             //    WishScoreForm wfg = new WishScoreForm(this);
-                //t = new Thread(show);
-                //t.Start();
-                //wfg.GetValue += new EventHandler(SendValue);
-                //wfg.ShowDialog();
-                //if(wfg.DialogResult.ToString)
-                //{
+            //t = new Thread(show);
+            //t.Start();
+            //wfg.GetValue += new EventHandler(SendValue);
+            //wfg.ShowDialog();
+            //if(wfg.DialogResult.ToString)
+            //{
 
             //    //}
             //}
@@ -336,13 +345,13 @@ namespace GZPIAnswer
             formStr = sender as string;
 
         }
-        public void GreatForm(string message)
+        public void GreatForm(string message,bool showPicture=false)
         {
-            MessageBoxForm mbf = new MessageBoxForm(message);
-            mbf.GetValue += new EventHandler(SendValue);           
+            MessageBoxForm mbf = new MessageBoxForm(message, showPicture);
+            mbf.GetValue += new EventHandler(SendValue);
             mbf.ShowDialog();
-           // mbf.TopMost=true;
-            if (this.DialogResult == DialogResult.OK && !Directory.Exists(secretLogDirectory_1) && formStr=="准备进入")
+            // mbf.TopMost=true;
+            if (this.DialogResult == DialogResult.OK && !Directory.Exists(secretLogDirectory_1) && formStr == "准备进入")
             {
                 //什么都不做
                 //continue;
@@ -351,13 +360,13 @@ namespace GZPIAnswer
             {
 
                 //Dowork();
-            }                                                                       
-                //check_t.Start();
-                //check_t.Join();                              
-                //弹出分享
-                //ShareForm sf = new ShareForm();
-                //sf.ShowDialog();
-            
+            }
+            //check_t.Start();
+            //check_t.Join();                              
+            //弹出分享
+            //ShareForm sf = new ShareForm();
+            //sf.ShowDialog();
+
             //if (this.DialogResult == DialogResult.OK && Directory.Exists(secretLogDirectory_1) && formStr == "准备下载")
             //{
             //    //弹出下载并且要跟上面一样
@@ -366,7 +375,7 @@ namespace GZPIAnswer
             //    dlf.ShowDialog();
             //    if (this.DialogResult == DialogResult.OK && Directory.Exists(secretLogDirectory_1) && formStr == "下载成功")
             //    {
-                    
+
             //    }
             //}
             else
@@ -387,7 +396,7 @@ namespace GZPIAnswer
         {
             html = this.webBrowser1.DocumentText;
         }
-        int k=0;
+        int k = 0;
         private void button3_Click(object sender, EventArgs e)
         {
             buttonToAnswer.Enabled = false;
@@ -397,13 +406,65 @@ namespace GZPIAnswer
                 //!Directory.Exists(secretLogDirectory_1
                 //if()
                 int number = 1;
-                if (k == 0 && url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=11" && number > 0)
+                if (isfreeUser&& k == 0 && url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=11")
                 {
+                    #region .........
+                    k = k + 1;
+                    Encoding encoding = Encoding.GetEncoding(webBrowser1.Document.Encoding);
+                    StreamReader stream = new StreamReader(webBrowser1.DocumentStream, encoding);
+                    string html = stream.ReadToEnd();
+                    Answer2 anser2 = new Answer2();
+                    anser2.GetWebTitles(html);
+                
+                    anser2.DoWrok();
+                    stream.Close();
+
+                    foreach (string id in anser2.judgeID)
+                    {
+                        try
+                        {
+                            webBrowser1.Document.GetElementById(id).SetAttribute("Checked", "true");
+                        }
+                        catch { }
+                    }
+                    foreach (string id in anser2.singleID)
+                    {
+                        try
+                        {
+                            webBrowser1.Document.GetElementById(id).SetAttribute("Checked", "true");
+                        }
+                        catch { }
+                    }
+                    foreach (string id in anser2.multipleID)
+                    {
+                        try
+                        {
+                            webBrowser1.Document.GetElementById(id).SetAttribute("Checked", "true");
+                        }
+                        catch { }
+                    }
+                    if (!this.ckbUnsubmit.Checked)
+                    {
+                        webBrowser1.Document.GetElementById("btnHandIn").InvokeMember("click");
+                    }
+                    //更新 一下 免费版，插入log,数据库记录
+                    isfreeUser = false;
+                    UserFreeHelper userFreeHelper = new UserFreeHelper();
+                    //userFreeHelper.InsertLogToLocal();
+                    userFreeHelper.InserMacCodeToService();
+                    #endregion............
+                }
+
+
+                else if(k == 0 && url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=11" && number > 0)
+                {
+                    #region .........
                     if (Number <= 0)
                     {
-                        GreatForm("当前答题剩余次数小于或等于3，请登陆 订单号（密码：123456）或登陆VIP帐号，请联系QQ:865704613");
+                        GreatForm("当前答题剩余次数小于或等于3，请登陆 账号/密码，答题QQ群：303822780，软件作者QQ:865704613");
                         return;
                     }
+                  
                     k = k + 1;
                     // Answer answer = new Answer();
                     //得到当前的编码并且读取
@@ -457,19 +518,17 @@ namespace GZPIAnswer
                     thread1.IsBackground = true;
 
                     thread1.Start(UserName);
-
-
-
                     //UpdateDatabase("Administrator");
                 }
+                #endregion............
                 else if (url == "http://222.85.149.6:99/Login.aspx")
                 {
-                    GreatForm("请先登录你的账号");
+                    GreatForm("请先登录你的账号【身份证，密码】进入系统后，再点击答题！");
                 }
                 else if (number <= 0)
                 {
                     string name = this.labelName.Text;
-                    GreatForm(name + "答题次数已经为小于或等于3，请联系QQ:865704613");
+                    GreatForm(name + "答题次数已经为小于或等于3，请联系：答题QQ群：303822780，软件作者QQ:865704613");
                 }
                 else
                 {
@@ -480,6 +539,7 @@ namespace GZPIAnswer
                     //GreatForm("如果多次登录都是一张试卷或者不同账号登录时一个账号是请清除你浏览器的缓存，或者是网站本身问题！3秒后自动退出");
 
                 }
+               
             }
             catch (Exception ex)
             {
@@ -490,9 +550,12 @@ namespace GZPIAnswer
                 this.Cursor = Cursors.Default;
                 buttonToAnswer.Enabled = true;
             }
-          
-         
+
         }
+
+       
+
+
         public void TheadUpdata(object o)
         {
             string s = o as string;
@@ -533,7 +596,7 @@ namespace GZPIAnswer
             try
             {
                 // UpdateDatabase("Administrator");
-               // this.labelNumber.Text=QueryNunber("Administrator").ToString();
+                // this.labelNumber.Text=QueryNunber("Administrator").ToString();
                 //conn = new MySqlConnection(ConString);
                 //conn.Open();
                 //MySqlCommand command = new MySqlCommand("select * from user", conn);
@@ -562,8 +625,8 @@ namespace GZPIAnswer
                 MessageBox.Show(ex.Message);
             }
             //
-          
-          
+
+
         }
         /// <summary>
         /// 跟新数据库中的次数和使用的次数
@@ -583,9 +646,9 @@ namespace GZPIAnswer
             }
             catch (Exception e)
             {
-                
+
             }
-           
+
         }
 
         public int QueryNunber(string name)
@@ -608,11 +671,11 @@ namespace GZPIAnswer
             }
             catch (Exception e)
             {
-                 
+
 
             }
 
-           
+
             return number;
         }
         #endregion
@@ -627,21 +690,21 @@ namespace GZPIAnswer
         }
         private void buttonLogin_Click(object sender, System.EventArgs e)
         {
-           Login login=new Login();
-           login.GetName += new EventHandler(GetName1);
-           login.GetPassWord += new EventHandler(GetPassWord1);
+            Login login = new Login();
+            login.GetName += new EventHandler(GetName1);
+            login.GetPassWord += new EventHandler(GetPassWord1);
             login.ShowDialog();
-            
+
             if (this.DialogResult == DialogResult.None)
             {
                 //login.GetName += new EventHandler(SendValue);    
                 //login.GetName += new EventHandler(GetName);
                 //login.GetPassWord += new EventHandler(GetNumber);
-           
-             
+
+
             }
-           
- 
+
+
         }
 
         private void labelName_Click(object sender, EventArgs e)
@@ -682,7 +745,7 @@ namespace GZPIAnswer
                 button3.Enabled = true;
                 this.Cursor = Cursors.Default;
             }
-         
+
         }
 
         private void ckbUnsubmit_CheckedChanged(object sender, EventArgs e)

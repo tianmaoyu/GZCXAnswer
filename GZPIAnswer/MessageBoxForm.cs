@@ -33,13 +33,17 @@ namespace GZPIAnswer
         string message_start = "请登录你的账号";
         //this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
         //this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel; 
-        public MessageBoxForm(string _message)
+        public MessageBoxForm(string _message,bool showPictrue=false)
         {
+           
             InitializeComponent();
             this.CenterToScreen();
             message = _message;
             this.TopMost = true;
-
+            if (showPictrue)
+            {
+                this.pictureBox1.Visible = true;
+            }
         }
 
         private void MainForm_Resize(object sender, EventArgs e)
@@ -194,5 +198,10 @@ namespace GZPIAnswer
             this.tb_message_string.Text = message;
 
          }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

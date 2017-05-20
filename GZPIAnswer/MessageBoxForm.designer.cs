@@ -36,12 +36,15 @@
             this.tb_close = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.tb_message_string);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
@@ -50,16 +53,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(361, 210);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // tb_message_string
             // 
             this.tb_message_string.BackColor = System.Drawing.SystemColors.Menu;
             this.tb_message_string.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_message_string.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tb_message_string.Location = new System.Drawing.Point(24, 33);
+            this.tb_message_string.Location = new System.Drawing.Point(24, 26);
             this.tb_message_string.Multiline = true;
             this.tb_message_string.Name = "tb_message_string";
-            this.tb_message_string.Size = new System.Drawing.Size(306, 126);
+            this.tb_message_string.Size = new System.Drawing.Size(306, 133);
             this.tb_message_string.TabIndex = 2;
             this.tb_message_string.Text = "你了！";
             // 
@@ -121,6 +125,18 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "助手提示";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::GZPIAnswer.Properties.Resources.timg;
+            this.pictureBox1.Location = new System.Drawing.Point(62, 49);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(246, 110);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            // 
             // MessageBoxForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -140,6 +156,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,6 +171,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_message_string;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

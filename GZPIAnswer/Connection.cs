@@ -92,5 +92,59 @@ namespace GZPIAnswer
             }
             return number;
         }
+
+        public int QueryMacCode(string macCode)
+        {
+            int number = 0;
+            try
+            {
+                conn = new MySqlConnection(ConString);
+                conn.Open();
+                MySqlCommand command = new MySqlCommand("SELECT id FROM tb_maccode WHERE MacCode='" + macCode + "'", conn);
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (reader.HasRows)
+                    {
+                        number = reader.GetInt32(0);
+                    }
+                }
+                reader.Close();
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+            return number;
+        }
+        public int InsertMacCode(string macCode)
+        {
+            int number = 0;
+            try
+            {
+                conn = new MySqlConnection(ConString);
+                conn.Open();
+                var creatTime = DateTime.Now;
+                var sql = string.Format("insert into tb_maccode (MacCode,createTime) VALUES ('{0}','{1}')", macCode, creatTime);
+                MySqlCommand command = new MySqlCommand(sql, conn);
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (reader.HasRows)
+                    {
+                        number = reader.GetInt32(0);
+                    }
+                }
+                reader.Close();
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+            return number;
+        }
+
     }
 }

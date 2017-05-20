@@ -29,7 +29,7 @@
     <PublisherName>答题助手</PublisherName>
     <SuiteName>答题助手</SuiteName>
     <WebPage>publish.thml</WebPage>
-    <ApplicationRevision>31</ApplicationRevision>
+    <ApplicationRevision>34</ApplicationRevision>
     <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -64,10 +64,10 @@
     <StartupObject>GZPIAnswer.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>80CF40479C79BE5A452B50797CE3A6F072E47088</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>43EF197599C7394AD35EF845B315891205071E99</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -81,10 +81,14 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>GZPIAnswer_5_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data">
@@ -105,6 +109,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -152,6 +157,7 @@
       <DependentUpon>ShareForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TitleAndAnswer.cs" />
+    <Compile Include="UserFreeHelper.cs" />
     <EmbeddedResource Include="BrowserForm.resx">
       <DependentUpon>BrowserForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +198,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\timg.gif" />
     <Content Include="答题助手.ico" />
   </ItemGroup>
   <ItemGroup>
