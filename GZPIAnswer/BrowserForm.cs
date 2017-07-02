@@ -290,9 +290,9 @@ namespace GZPIAnswer
             if (url == "http://222.85.149.6:99/Admin/Main.aspx" && f == 1)
             {
                 //Thread.Sleep(1000);
-                webBrowser1.Navigate(new Uri("http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=11"));
+                webBrowser1.Navigate(new Uri("http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=12"));
             }
-            if (url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=11" && f == 1)
+            if (url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=12" && f == 1)
             {
 
                 //Thread.Sleep(1500);
@@ -406,7 +406,7 @@ namespace GZPIAnswer
                 //!Directory.Exists(secretLogDirectory_1
                 //if()
                 int number = 1;
-                if (isfreeUser&& k == 0 && url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=11")
+                if (isfreeUser&& k == 0 && url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=12")
                 {
                     #region .........
                     k = k + 1;
@@ -456,7 +456,7 @@ namespace GZPIAnswer
                 }
 
 
-                else if(k == 0 && url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=11" && number > 0)
+                else if(k == 0 && url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=12" && number > 0)
                 {
                     #region .........
                     if (Number <= 0)
@@ -532,7 +532,7 @@ namespace GZPIAnswer
                 }
                 else
                 {
-                    string address = "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=11";
+                    string address = "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=12";
                     webBrowser1.Navigate(new Uri(address));
                     k = 0;
 
@@ -567,7 +567,7 @@ namespace GZPIAnswer
         private void button4_Click(object sender, System.EventArgs e)
         {
 
-            if (url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=11")
+            if (url == "http://222.85.149.6:99/Admin/ExamPaper.aspx?ExamID=12")
             {
                 string address = "http://222.85.149.6:99/Admin/ExamPaperList.aspx?Page=1";
                 webBrowser1.Navigate(new Uri(address));

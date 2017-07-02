@@ -29,8 +29,8 @@
     <PublisherName>答题助手</PublisherName>
     <SuiteName>答题助手</SuiteName>
     <WebPage>publish.thml</WebPage>
-    <ApplicationRevision>34</ApplicationRevision>
-    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>38</ApplicationRevision>
+    <ApplicationVersion>2.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
