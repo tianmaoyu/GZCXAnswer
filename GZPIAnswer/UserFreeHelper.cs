@@ -20,7 +20,7 @@ namespace GZPIAnswer
             Connection sqlConnection = new Connection();
             var maccode = Value();
             var result = sqlConnection.QueryMacCode(maccode);
-            if (result > 0)
+            if (result >= 0)
                 return false;
             else
                 return true;
