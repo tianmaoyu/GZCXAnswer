@@ -12,7 +12,7 @@ namespace GZPIAnswer
     public class Connection
     {
         private DataSet dsall;
-        private static String ConString = "database=answer;Password=qwe123456qwe;UserName=root;server=119.23.48.137;Port=3307;charset=utf8";
+        private static String ConString = "database=answer;Password=qwe123456;UserName=root;server=119.23.48.137;Port=3306;charset=utf8";
         private MySqlConnection conn;
         private MySqlDataAdapter mdap;
         
@@ -95,7 +95,7 @@ namespace GZPIAnswer
 
         public int QueryMacCode(string macCode)
         {
-            int number = 0;
+            int number = -1;
             try
             {
                 conn = new MySqlConnection(ConString);
@@ -114,7 +114,12 @@ namespace GZPIAnswer
             }
             catch (Exception e)
             {
-               
+                number = 0;
+                return number;
+            }
+            finally
+            {
+
             }
             return number;
         }

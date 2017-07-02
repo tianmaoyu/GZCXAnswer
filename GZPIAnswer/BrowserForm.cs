@@ -187,7 +187,7 @@ namespace GZPIAnswer
                 if (isFirstTimeUse)
                 {
                     isfreeUser = true;
-                    GreatForm("免费提供一次答题！",true);
+                    GreatForm("免费提供一次答题！", true);
                 }
                 else
                 {

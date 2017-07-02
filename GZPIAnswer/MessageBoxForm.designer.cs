@@ -30,20 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MessageBoxForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tb_message_string = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tb_close = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.useGuide = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.useGuide);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.tb_message_string);
             this.panel1.Controls.Add(this.button2);
@@ -54,6 +56,18 @@
             this.panel1.Size = new System.Drawing.Size(361, 210);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::GZPIAnswer.Properties.Resources.timg;
+            this.pictureBox1.Location = new System.Drawing.Point(51, 76);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(246, 96);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
             // 
             // tb_message_string
             // 
@@ -125,17 +139,19 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "助手提示";
             // 
-            // pictureBox1
+            // useGuide
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::GZPIAnswer.Properties.Resources.timg;
-            this.pictureBox1.Location = new System.Drawing.Point(62, 49);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(246, 110);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
+            this.useGuide.Enabled = false;
+            this.useGuide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.useGuide.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.useGuide.Location = new System.Drawing.Point(51, 67);
+            this.useGuide.Name = "useGuide";
+            this.useGuide.Size = new System.Drawing.Size(246, 28);
+            this.useGuide.TabIndex = 4;
+            this.useGuide.Text = "使用教程";
+            this.useGuide.UseVisualStyleBackColor = true;
+            this.useGuide.Visible = false;
+            this.useGuide.Click += new System.EventHandler(this.useGuide_Click);
             // 
             // MessageBoxForm
             // 
@@ -155,8 +171,8 @@
             this.Resize += new System.EventHandler(this.MainForm_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,6 +188,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_message_string;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button useGuide;
     }
 }
 

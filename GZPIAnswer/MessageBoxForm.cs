@@ -40,9 +40,12 @@ namespace GZPIAnswer
             this.CenterToScreen();
             message = _message;
             this.TopMost = true;
+           
             if (showPictrue)
             {
                 this.pictureBox1.Visible = true;
+                this.useGuide.Enabled = true;
+                this.useGuide.Visible = true;
             }
         }
 
@@ -202,6 +205,11 @@ namespace GZPIAnswer
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void useGuide_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://119.23.48.137/");
         }
     }
 }
