@@ -45,7 +45,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.label_Name = new System.Windows.Forms.Label();
             this.label_Number = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.labelNumber = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -55,6 +54,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.ckbUnsubmit = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.webPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -263,19 +263,6 @@
             this.label_Number.TabIndex = 18;
             this.label_Number.Text = "剩余次数：";
             // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(371, 33);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(150, 16);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "作者QQ:865704613";
-            // 
             // labelNumber
             // 
             this.labelNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -387,6 +374,20 @@
             this.label6.Size = new System.Drawing.Size(167, 16);
             this.label6.TabIndex = 29;
             this.label6.Text = "答题QQ群:303822780";
+            this.label6.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(371, 33);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(116, 16);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "QQ:710557405";
             // 
             // BrowserForm
             // 
@@ -448,7 +449,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label_Name;
         private System.Windows.Forms.Label label_Number;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label labelNumber;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.TextBox textBox1;
@@ -458,6 +458,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.CheckBox ckbUnsubmit;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
     }
 }
 
