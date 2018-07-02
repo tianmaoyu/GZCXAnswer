@@ -9,17 +9,23 @@ using Paway.Windows.Forms;
 using System.IO;
 using System.Runtime.InteropServices;
 using MySql.Data.MySqlClient;
-
+using System.Reflection;
 
 namespace GZPIAnswer
 {
     public partial class BrowserForm : _360Form
     {
+        //private static string defaultUserAgent = null;
+        //[DllImport("urlmon.dll", CharSet = CharSet.Ansi)]
+        //private static extern int UrlMkSetSessionOption(int dwOption, string pBuffer, int dwBufferLength, int dwReserved);
+        //const int URLMON_OPTION_USERAGENT = 0x10000001;
+
+
         [DllImport("User32.dll")]
         private static extern Int32 SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         private static string baseUrl = "http://nsla.gzu.edu.cn/";
         private static string mainUrl = "http://nsla.gzu.edu.cn/Admin/Main.aspx";
-        private static string exizmpageUrl = "http://nsla.gzu.edu.cn/Admin/ExamPaper.aspx?ExamID=14";
+        private static string exizmpageUrl = "http://nsla.gzu.edu.cn/Admin/ExamPaper.aspx?ExamID=13";
         private static string examInfoList = "http://nsla.gzu.edu.cn/Admin/ExamPaperList.aspx";
 
         private  bool isfreeUser = false;//是不可以免费一次
@@ -101,14 +107,56 @@ namespace GZPIAnswer
             //    MessageBox.Show("您可以免费使用本软件3次！", "感谢您首次使用");
             //    return;
             //}
+            //string pBuffer = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36 Core/1.47.277.400";
+            //UrlMkSetSessionOption(0x10000001, pBuffer, pBuffer.Length, 0);
 
             string address = baseUrl;
+            //webBrowser1.AllowNavigation = true;
+            //webBrowser1.AllowWebBrowserDrop = true;
+            //webBrowser1.IsWebBrowserContextMenuEnabled = true;
+           
             webBrowser1.Navigate(new Uri(address));
 
             //Thread thread = new Thread(CrossThreadFlush);
             //thread.IsBackground = true;
             //thread.Start();
         }
+
+        ///// <summary>
+        ///// 在默认的UserAgent后面加一部分
+        ///// </summary>
+        //public static void AppendUserAgent(string appendUserAgent)
+        //{
+        //    if (string.IsNullOrEmpty(defaultUserAgent))
+        //        defaultUserAgent = GetDefaultUserAgent();
+        //    string ua = defaultUserAgent + ";" + appendUserAgent;
+        //    ChangeUserAgent(ua);
+        //}
+        ///// <summary>
+        ///// 修改UserAgent
+        ///// </summary>
+        //public static void ChangeUserAgent(string userAgent)
+        //{
+        //    UrlMkSetSessionOption(URLMON_OPTION_USERAGENT, userAgent, userAgent.Length, 0);
+        //}
+        ///// <summary>
+        ///// 一个很BT的获取IE默认UserAgent的方法
+        ///// </summary>
+        //public static string GetDefaultUserAgent()
+        //{
+        //    WebBrowser wb = new WebBrowser();
+        //    wb.Navigate("about:blank");
+        //    while (wb.IsBusy) Application.DoEvents();
+        //    object window = wb.Document.Window.DomWindow;
+        //    Type wt = window.GetType();
+        //    object navigator = wt.InvokeMember("navigator", BindingFlags.GetProperty,
+        //        null, window, new object[] { });
+        //    Type nt = navigator.GetType();
+        //    object userAgent = nt.InvokeMember("userAgent", BindingFlags.GetProperty,
+        //        null, navigator, new object[] { });
+        //    return userAgent.ToString();
+        //}
+
         #region 跨线程修改控件（答题剩余次数）
         private delegate void FlushClient();//代理
         private void CrossThreadFlush()
@@ -399,6 +447,11 @@ namespace GZPIAnswer
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             html = this.webBrowser1.DocumentText;
+            var btn=   webBrowser1.Document.GetElementById("btnkl");
+            if (btn != null)
+            {
+                btn.Style = "";
+            }
         }
         int k = 0;
         private void button3_Click(object sender, EventArgs e)
@@ -592,7 +645,7 @@ namespace GZPIAnswer
         #region 链接数据库
         private DataSet dsall;
         //private static String mysqlcon = "Data Source=MySQL;database=onepc;Password=;User ID=root;Location=192.168.1.168;charset=utf8";
-        private static String ConString = "database=answer;Password=qwe;User ID=root;server=112.74.96.222;charset=utf8";
+        private static String ConString = "database=answer;Password=qwe123456qwe;User ID=root;server=112.74.96.222;charset=utf8";
         private MySqlConnection conn;
         private MySqlDataAdapter mdap;
         private void Connection_Click(object sender, System.EventArgs e)
