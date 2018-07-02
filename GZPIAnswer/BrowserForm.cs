@@ -17,6 +17,10 @@ namespace GZPIAnswer
     {
         [DllImport("User32.dll")]
         private static extern Int32 SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        private static string baseUrl = "http://nsla.gzu.edu.cn/";
+        private static string mainUrl = "http://nsla.gzu.edu.cn/Admin/Main.aspx";
+        private static string exizmpageUrl = "http://nsla.gzu.edu.cn/Admin/ExamPaper.aspx?ExamID=14";
+        private static string examInfoList = "http://nsla.gzu.edu.cn/Admin/ExamPaperList.aspx";
 
         private  bool isfreeUser = false;//是不可以免费一次
         public const int WM_VSCROLL = 0x0115;//垂直滚动条消息
@@ -98,7 +102,7 @@ namespace GZPIAnswer
             //    return;
             //}
 
-            string address = "http://210.40.16.252:99/Login.aspx";
+            string address = baseUrl;
             webBrowser1.Navigate(new Uri(address));
 
             //Thread thread = new Thread(CrossThreadFlush);
@@ -120,7 +124,7 @@ namespace GZPIAnswer
             Number = connection.QueryNunber("test_3");
             if (Number == 0)
             {
-                this.webBrowser1.Navigate("http://www.tianmaoyu.com");
+                this.webBrowser1.Navigate("http://tianmaoyu.github.io/Answer/index.html");
             }
             this.labelNumber.Text = (Number + 3).ToString();
         }
@@ -195,7 +199,7 @@ namespace GZPIAnswer
                 }
             });
             checkThread.Start();
-            if (url == "http://210.40.16.252:99/Login.aspx")
+            if (url == baseUrl)
             {
                 // GreatForm(message_start);
             }
@@ -282,17 +286,17 @@ namespace GZPIAnswer
             {
 
             }
-            if (url == "http://210.40.16.252:99/Login.aspx" && f == 1)
+            if (url == baseUrl && f == 1)
             {
 
             }
 
-            if (url == "http://210.40.16.252:99/Admin/Main.aspx" && f == 1)
+            if (url == mainUrl && f == 1)
             {
                 //Thread.Sleep(1000);
-                webBrowser1.Navigate(new Uri("http://210.40.16.252:99/Admin/ExamPaper.aspx?ExamID=12"));
+                webBrowser1.Navigate(new Uri(exizmpageUrl));
             }
-            if (url == "http://210.40.16.252:99/Admin/ExamPaper.aspx?ExamID=12" && f == 1)
+            if (url == exizmpageUrl && f == 1)
             {
 
                 //Thread.Sleep(1500);
@@ -406,7 +410,7 @@ namespace GZPIAnswer
                 //!Directory.Exists(secretLogDirectory_1
                 //if()
                 int number = 1;
-                if (isfreeUser&& k == 0 && url == "http://210.40.16.252:99/Admin/ExamPaper.aspx?ExamID=12")
+                if (isfreeUser&& k == 0 && url == exizmpageUrl)
                 {
                     #region .........
                     k = k + 1;
@@ -456,7 +460,7 @@ namespace GZPIAnswer
                 }
 
 
-                else if(k == 0 && url == "http://210.40.16.252:99/Admin/ExamPaper.aspx?ExamID=12" && number > 0)
+                else if(k == 0 && url == exizmpageUrl && number > 0)
                 {
                     #region .........
                     if (Number <= 0)
@@ -521,7 +525,7 @@ namespace GZPIAnswer
                     //UpdateDatabase("Administrator");
                 }
                 #endregion............
-                else if (url == "http://210.40.16.252:99/Login.aspx")
+                else if (url == baseUrl)
                 {
                     GreatForm("请先登录你的账号【身份证，密码】进入系统后，再点击答题！");
                 }
@@ -532,7 +536,7 @@ namespace GZPIAnswer
                 }
                 else
                 {
-                    string address = "http://210.40.16.252:99/Admin/ExamPaper.aspx?ExamID=12";
+                    string address = exizmpageUrl;
                     webBrowser1.Navigate(new Uri(address));
                     k = 0;
 
@@ -567,9 +571,9 @@ namespace GZPIAnswer
         private void button4_Click(object sender, System.EventArgs e)
         {
 
-            if (url == "http://210.40.16.252:99/Admin/ExamPaper.aspx?ExamID=12")
+            if (url == exizmpageUrl)
             {
-                string address = "http://210.40.16.252:99/Admin/ExamPaperList.aspx?Page=1";
+                string address = examInfoList;
                 webBrowser1.Navigate(new Uri(address));
             }
             else
@@ -580,7 +584,7 @@ namespace GZPIAnswer
 
         private void button5_Click(object sender, System.EventArgs e)
         {
-            string address = "http://210.40.16.252:99/Login.aspx";
+            string address = baseUrl;
             webBrowser1.Navigate(new Uri(address));
         }
 
