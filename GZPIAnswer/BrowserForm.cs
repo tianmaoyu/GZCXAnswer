@@ -592,7 +592,7 @@ namespace GZPIAnswer
         #region 链接数据库
         private DataSet dsall;
         //private static String mysqlcon = "Data Source=MySQL;database=onepc;Password=;User ID=root;Location=192.168.1.168;charset=utf8";
-        private static String ConString = "database=answer;Password=qwe123456qwe;User ID=root;server=112.74.96.222;charset=utf8";
+        private static String ConString = "database=answer;Password=qwe;User ID=root;server=112.74.96.222;charset=utf8";
         private MySqlConnection conn;
         private MySqlDataAdapter mdap;
         private void Connection_Click(object sender, System.EventArgs e)
