@@ -687,10 +687,12 @@ namespace GZPIAnswer
 
         public  void DoWrok()
         {
-#if DEBUG
-            FileStream aFileStream = new FileStream("H:\\工具\\答题助手数据\\2016分析\\log.txt", FileMode.OpenOrCreate);
-            StreamWriter sw = new StreamWriter(aFileStream, Encoding.GetEncoding("GB2312"));
-#endif
+//#if DEBUG
+//            var logFile = "D:\\Anser\\答题助手数据\\2016分析\\log.txt";
+//            if (!Directory.Exists(logFile)) Directory.CreateDirectory(logFile);
+//            FileStream aFileStream = new FileStream(logFile, FileMode.OpenOrCreate);
+//            StreamWriter sw = new StreamWriter(aFileStream, Encoding.GetEncoding("GB2312"));
+//#endif
 
 
 
@@ -702,9 +704,9 @@ namespace GZPIAnswer
                     if (SingleAnserStrings[j].Contains(webSigleTitles[i]))
                     {
                         string answer = singleAnswers[j];
-#if DEBUG
-                        sw.WriteLine(i + ":" + answer);
-#endif
+//#if DEBUG
+//                        sw.WriteLine(i + ":" + answer);
+//#endif
                         //ij++;
                         string id = GetSingleID(htmlDOC, i, j);
                         // string id = GetSingleID(answer, i);
@@ -712,12 +714,12 @@ namespace GZPIAnswer
                         isFind = true;
                     }
                 }
-#if DEBUG
-                if (!isFind)
-                {
-                    sw.WriteLine("未能找到:" + webSigleTitles[i]);
-                }
-#endif
+//#if DEBUG
+//                if (!isFind)
+//                {
+//                    sw.WriteLine("未能找到:" + webSigleTitles[i]);
+//                }
+//#endif
             }
 
             for (int i = 0; i < webJudgeTitles.Count; i++)
